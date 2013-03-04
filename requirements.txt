@@ -1,0 +1,9 @@
+Django
+MySQL-python
+django-debug-toolbar
+south
+django-extensions
+PIL
+raven
+sorl-thumbnail
+iPython

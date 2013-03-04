@@ -1,0 +1,52 @@
+# General
+.settings
+.project
+.buildpath
+.DS_Store
+# Project-Files
+___Kopie*
+.buildpath
+.project
+.settings
+.svn
+.*~
+*~
+._*
+.DS_Store
+_project
+
+# Framework-Files
+*.log
+*.pot
+*.pyc
+local_settings.py
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Host-specific
+
