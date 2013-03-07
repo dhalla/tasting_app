@@ -8,17 +8,17 @@ class Region(models.Model):
         Herkunftsland / Region, z.B. Highlands, Japan, usw.
     """
 
-    name = models.CharField("Land/Region", max_length=100, unique=True)
+    name = models.CharField("Region", max_length=100, unique=True)
     slug = models.SlugField(max_length=100)
     description = models.CharField("Kommentar", blank=True, max_length=250)
 
     class Meta:
-        verbose_name = 'Land/Region'
-        verbose_name_plural = 'Länder/Regionen'
+        verbose_name = 'Region'
+        verbose_name_plural = 'Regionen'
         ordering = ['name']
 
     def __unicode__(self):
-        pass
+        self.name
 
 
 class Spirittype(models.Model):
@@ -36,7 +36,7 @@ class Spirittype(models.Model):
         ordering = ['name']
 
     def __unicode__(self):
-        pass
+        return self.name
 
 
 class Spirit(models.Model):
@@ -53,15 +53,15 @@ class Spirit(models.Model):
         Spirittype, on_delete=models.SET_NULL, verbose_name=u'Typ', null=True
     )
     region = models.ForeignKey(
-        Region, on_delete=models.SET_NULL, verbose_name=u'Land/Region', null=True
+        Region, on_delete=models.SET_NULL, verbose_name=u'Region', null=True
     )
     public = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     modified = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:
-        verbose_name = 'spirit'
-        verbose_name_plural = 'spirits'
+        verbose_name = 'Whisky'
+        verbose_name_plural = 'Whiskies'
         ordering = ['name', 'age']
 
     def __unicode__(sel):

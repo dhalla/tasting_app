@@ -1,5 +1,41 @@
 [
   {
+    "model": "bar.spirittype",
+    "pk": 1,
+    "fields": {
+      "name": "Grain",
+      "slug": "grain",
+      "description": "Korn"
+    }
+  },
+  {
+    "model": "bar.spirittype",
+    "pk": 2,
+    "fields": {
+      "name": "Malt",
+      "slug": "malt",
+      "description": "Malt"
+    }
+  },
+  {
+    "model": "bar.spirittype",
+    "pk": 3,
+    "fields": {
+      "name": "Blended",
+      "slug": "blend",
+      "description": "Blend"
+    }
+  },
+  {
+    "model": "bar.spirittype",
+    "pk": 4,
+    "fields": {
+      "name": "Single Malt",
+      "slug": "single-malt",
+      "description": "Blend"
+    }
+  },
+  {
     "model": "bar.region",
     "pk": 1,
     "fields": {
