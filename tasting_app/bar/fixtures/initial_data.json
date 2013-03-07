@@ -1,0 +1,57 @@
+[
+  {
+    "model": "bar.region",
+    "pk": 1,
+    "fields": {
+      "name": "Schottland - Highland",
+      "slug": "schottland-highland",
+      "description": "Die flächenmäßig größte Whiskyregion in Schottland und Heimat von Balblair, Oban oder Glenmorangie."
+    }
+  },
+  {
+    "model": "bar.region",
+    "pk": 2,
+    "fields": {
+      "name": "Schottland - Speyside",
+      "slug": "schottland-speyside",
+      "description": "Die Region mit den meisten Destillen, u.a. Balvenie, Cragganmore, Glencfarclas und The Macallan"
+    }
+  },
+  {
+    "model": "bar.region",
+    "pk": 3,
+    "fields": {
+      "name": "Schottland - Islay",
+      "slug": "schottland-islay",
+      "description": "Heimat einiger berühmter Destillen wie Lagavulin, Ardbeg, Bowmore oder Laphroig. Berüchtigt für torfige, starke Whiskies."
+    }
+  },
+  {
+    "model": "bar.region",
+    "pk": 4,
+    "fields": {
+      "name": "Schottland - The Islands",
+      "slug": "schottland-islands",
+      "description": "Die Inseln Arran, Jura, Mull, Orkney (Highland Park) und Skye (Talisker), ausgenommen Islay."
+    }
+  },
+  {
+    "model": "bar.region",
+    "pk": 5,
+    "fields": {
+      "name": "Schottland - Lowland",
+      "slug": "schottland-islands",
+      "description": "Die südlichste und kleinste Whiskyregion mit nur vier Destillen: Auchentoshan, Glenkinchie, Bladnoch und Alisa Bay."
+    }
+  },
+  {
+    "model": "bar.region",
+    "pk": 6,
+    "fields": {
+      "name": "Schottland - Campbeltown",
+      "slug": "schottland-campbeltown",
+      "description": "Once home to over 30 distilleries, currently has only three distilleries operating"
+    }
+  }
+
+]
