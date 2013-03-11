@@ -18,7 +18,7 @@ class Region(models.Model):
         ordering = ['name']
 
     def __unicode__(self):
-        self.name
+        return self.name
 
 
 class Spirittype(models.Model):
