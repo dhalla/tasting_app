@@ -10,7 +10,7 @@ class Region(models.Model):
 
     name = models.CharField("Region", max_length=100, unique=True)
     slug = models.SlugField(max_length=100)
-    description = models.CharField("Kommentar", blank=True, max_length=250)
+    description = models.TextField("Kommentar", blank=True)
 
     class Meta:
         verbose_name = 'Region'
@@ -23,17 +23,42 @@ class Region(models.Model):
 
 class Spirittype(models.Model):
     """
-        Scotch, Single Malt, Scotch Blend, Bourbon, Irish, Canadian, ...
+        Scotch, Single Malt, Scotch Blend, Bourbon, Irish, Canadian, usw.
     """
 
     name = models.CharField("Typ", max_length=100, unique=True)
     slug = models.SlugField(max_length=100)
-    description = models.CharField("Kommentar", blank=True, max_length=250)
+    description = models.TextField("Kommentar", blank=True)
 
     class Meta:
         verbose_name = 'Typ'
         verbose_name_plural = 'Typen'
         ordering = ['name']
+
+    def __unicode__(self):
+        return self.name
+
+
+class Distillery(models.Model):
+    """
+        Destillen
+    """
+
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100)
+    description = models.TextField("Kommentar", blank=True)
+    region = models.ForeignKey(
+        Region, on_delete=models.SET_NULL, verbose_name=u'Region', null=True
+    )
+    founded = models.PositiveSmallIntegerField("Gegründet", blank=True, null=True)
+    capacity = models.IntegerField("Kapazität", blank=True, null=True,
+                                   help_text="in metrischen Litern")
+    location = models.CharField("Ort", max_length=200, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Destille'
+        verbose_name_plural = 'Destillen'
+        ordering = ['name', 'region']
 
     def __unicode__(self):
         return self.name
@@ -46,14 +71,15 @@ class Spirit(models.Model):
 
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    description = models.TextField("Kommentar", null=True, max_length=250)
-    age = models.PositiveSmallIntegerField("Alter", null=True)
-    web = models.URLField("Website", max_length=255, null=True)
+    description = models.TextField("Kommentar", blank=True)
+    age = models.PositiveSmallIntegerField("Alter", blank=True, null=True, help_text='In Jahren')
+    web = models.URLField("Website", max_length=255, blank=True)
+    volume = models.PositiveSmallIntegerField("Vol. %", help_text="Alkoholgehalt")
+    distillery = models.ForeignKey(
+        Distillery, on_delete=models.SET_NULL, verbose_name=u'Destille', null=True
+    )
     spirittype = models.ForeignKey(
         Spirittype, on_delete=models.SET_NULL, verbose_name=u'Typ', null=True
-    )
-    region = models.ForeignKey(
-        Region, on_delete=models.SET_NULL, verbose_name=u'Region', null=True
     )
     public = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
@@ -64,8 +90,12 @@ class Spirit(models.Model):
         verbose_name_plural = 'Whiskies'
         ordering = ['name', 'age']
 
-    def __unicode__(sel):
-        pass
+    def __unicode__(self):
+        if self.age:
+            age = ' (' + str(self.age) + ' Jahre)'
+        else:
+            age = ''
+        return self.distillery.name + ' ' + self.name + age
 
 
 class Image(models.Model):

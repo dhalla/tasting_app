@@ -39,9 +39,9 @@
     "model": "bar.region",
     "pk": 1,
     "fields": {
-      "name": "Schottland - Highland",
+      "name": "Schottland - Highlands",
       "slug": "schottland-highland",
-      "description": "Die flächenmäßig größte Whiskyregion in Schottland und Heimat von Balblair, Oban oder Glenmorangie."
+      "description": "Die flächenmäßig größte Whiskyregion in Schottland und Heimat von Balblair, Oban und Glenmorangie."
     }
   },
   {
@@ -50,7 +50,7 @@
     "fields": {
       "name": "Schottland - Speyside",
       "slug": "schottland-speyside",
-      "description": "Die Region mit den meisten Destillen, u.a. Balvenie, Cragganmore, Glencfarclas und The Macallan"
+      "description": "Die Region mit den meisten Destillen, u.a. Balvenie, Cragganmore, Glencfarclas und The Macallan."
     }
   },
   {
@@ -59,7 +59,7 @@
     "fields": {
       "name": "Schottland - Islay",
       "slug": "schottland-islay",
-      "description": "Heimat einiger berühmter Destillen wie Lagavulin, Ardbeg, Bowmore oder Laphroig. Berüchtigt für torfige, starke Whiskies."
+      "description": "Heimat einiger berühmter Destillen wie Lagavulin, Ardbeg, Bowmore oder Laphroig. Bekannt für torfige, starke Whiskies."
     }
   },
   {
@@ -86,8 +86,55 @@
     "fields": {
       "name": "Schottland - Campbeltown",
       "slug": "schottland-campbeltown",
-      "description": "Once home to over 30 distilleries, currently has only three distilleries operating"
+      "description": "In Campbeltown gab es früher rund 30 Destillen, heute sind noch ganze 3 übrig geblieben."
+    }
+  },
+  {
+    "model": "bar.distillery",
+    "pk": 1,
+    "fields": {
+      "name": "Talisker",
+      "slug": "talisker",
+      "description": "Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+      "region": 4
+    }
+  },
+  {
+    "model": "bar.distillery",
+    "pk": 2,
+    "fields": {
+      "name": "Laphroaig",
+      "slug": "laphroaig",
+      "description": "Curabitur blandit tempus porttitor.",
+      "region": 5
+    }
+  },
+  {
+    "model": "bar.distillery",
+    "pk": 3,
+    "fields": {
+      "name": "Ardbeg",
+      "slug": "ardbeg",
+      "founded": 1815,
+      "capacity": 1000000,
+      "location": "Nahe Port Ellen",
+      "region": 5
     }
   }
-
+  ,
+  {
+    "model": "bar.Spirit",
+    "pk": 1,
+    "fields": {
+      "name": "Uigeadail",
+      "slug": "uigeadail",
+      "web": "http://www.whisky.de/shop/Schottland/Single-Malt/Islay/Ardbeg-Uigeadail---1.html",
+      "volume": 54,
+      "distillery": 3,
+      "spirittype": 4,
+      "description": "Nicht kaltfiltrierter Blend aus ca. 90% Bourbon- und 10% Sherry-Fässern. Jim Murray \"Whisky of the year 2009\"",
+      "created": "2013-03-20 20:00:00",
+      "modified": "2013-03-20 20:00:00"
+    }
+  }
 ]

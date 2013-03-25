@@ -22,6 +22,7 @@ DATABASES = {
 
 ALLOWED_HOSTS = []
 APPEND_SLASH = True
+INTERNAL_IPS = ('127.0.0.1',)
 
 TIME_ZONE = 'Europe/Berlin'
 LANGUAGE_CODE = 'de-de'
@@ -77,6 +78,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -99,7 +101,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'south',
-    'bar'
+    'bar',
+    'misc',
+    'debug_toolbar',
     # 'django.contrib.admindocs',
 )
 
