@@ -10,15 +10,18 @@ from django.contrib import messages
 
 from bar.models import *
 
+
 def home(request):
     """ Display Homepage """
 
     scotch_list = Spirit.objects.all()
+    user_str = str(request.user)
 
     return render_to_response(
-        'misc/home.html',
+        'home.html',
         {
             'scotch_list': scotch_list,
+            'user': user_str
         },
         context_instance=RequestContext(request)
     )

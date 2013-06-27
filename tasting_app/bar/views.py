@@ -7,3 +7,19 @@ from django.core import serializers
 from django.template import RequestContext
 from django.template.defaultfilters import slugify
 from django.contrib import messages
+
+from bar.models import *
+
+
+def list(request):
+    """ Display Homepage """
+
+    scotch_list = Spirit.objects.all()
+
+    return render_to_response(
+        'list.html',
+        {
+            'scotch_list': scotch_list,
+        },
+        context_instance=RequestContext(request)
+    )

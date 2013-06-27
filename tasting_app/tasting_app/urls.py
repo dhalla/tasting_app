@@ -1,19 +1,26 @@
 from django.conf.urls import patterns, include, url
-
+from django.views.generic import RedirectView
 from django.contrib import admin
 from django.contrib.sites.models import Site
+
 admin.autodiscover()
 admin.site.unregister(Site)
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^tasting_app/', include('tasting_app.foo.urls')),
+urlpatterns = patterns(
 
+    '',
+
+    # Home / Home Redirect
+    #url(r'^$', RedirectView.as_view(url='/misc/home')),
     url(r'^$', 'misc.views.home', name='home'),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # Misc
+    url(r'^misc/', include('misc.urls')),
 
-    # Uncomment the next line to enable the admin:
+    # Bar
+    url(r'^bar/', include('bar.urls')),
+
+    # Admin
     url(r'^admin/', include(admin.site.urls)),
+
 )

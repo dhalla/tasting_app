@@ -1,8 +1,9 @@
 import os
-PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+INTERNAL_IPS = ('127.0.0.1',)
 
 ADMINS = (
     ('Daniel', 'dha.mailings@googlemail.com'),
@@ -22,7 +23,6 @@ DATABASES = {
 
 ALLOWED_HOSTS = []
 APPEND_SLASH = True
-INTERNAL_IPS = ('127.0.0.1',)
 
 TIME_ZONE = 'Europe/Berlin'
 LANGUAGE_CODE = 'de-de'
@@ -40,21 +40,10 @@ MEDIA_ROOT = ''
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = ''
 
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static/')
 STATIC_URL = '/static/'
-
-# Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'templates/assets/'),
 )
 
 # List of finder classes that know how to find static files in various locations.
@@ -89,7 +78,7 @@ ROOT_URLCONF = 'tasting_app.urls'
 WSGI_APPLICATION = 'tasting_app.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, 'templates'),
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (

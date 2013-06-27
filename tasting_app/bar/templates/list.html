@@ -1,0 +1,17 @@
+{% extends "site/base.html" %}
+
+{% load staticfiles %}
+
+{% block content_main %}
+
+    <img src="{% static "img/scotchklub-logo-black.png" %}" alt="Scotchklub" class="pull-left" style="height: 100px; width: 100px; margin-right: 20px; ">
+    <h2 class="clearfix">Willkommen im Scotchklub</h2>
+
+    <ul>
+    {% for scotch in scotch_list %}
+        <li>{{scotch}}</li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+

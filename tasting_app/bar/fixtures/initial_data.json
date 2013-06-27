@@ -1,140 +1,195 @@
 [
-  {
-    "model": "bar.spirittype",
-    "pk": 1,
-    "fields": {
-      "name": "Grain",
-      "slug": "grain",
-      "description": "Korn"
-    }
-  },
-  {
-    "model": "bar.spirittype",
-    "pk": 2,
-    "fields": {
-      "name": "Malt",
-      "slug": "malt",
-      "description": "Malt"
-    }
-  },
-  {
-    "model": "bar.spirittype",
-    "pk": 3,
-    "fields": {
-      "name": "Blended",
-      "slug": "blend",
-      "description": "Blend"
-    }
-  },
-  {
-    "model": "bar.spirittype",
-    "pk": 4,
-    "fields": {
-      "name": "Single Malt",
-      "slug": "single-malt",
-      "description": "Blend"
-    }
-  },
-  {
-    "model": "bar.region",
-    "pk": 1,
-    "fields": {
-      "name": "Schottland - Highlands",
-      "slug": "schottland-highland",
-      "description": "Die flächenmäßig größte Whiskyregion in Schottland und Heimat von Balblair, Oban und Glenmorangie."
-    }
-  },
-  {
-    "model": "bar.region",
-    "pk": 2,
-    "fields": {
-      "name": "Schottland - Speyside",
-      "slug": "schottland-speyside",
-      "description": "Die Region mit den meisten Destillen, u.a. Balvenie, Cragganmore, Glencfarclas und The Macallan."
-    }
-  },
-  {
-    "model": "bar.region",
-    "pk": 3,
-    "fields": {
-      "name": "Schottland - Islay",
-      "slug": "schottland-islay",
-      "description": "Heimat einiger berühmter Destillen wie Lagavulin, Ardbeg, Bowmore oder Laphroig. Bekannt für torfige, starke Whiskies."
-    }
-  },
-  {
-    "model": "bar.region",
-    "pk": 4,
-    "fields": {
-      "name": "Schottland - The Islands",
-      "slug": "schottland-islands",
-      "description": "Die Inseln Arran, Jura, Mull, Orkney (Highland Park) und Skye (Talisker), ausgenommen Islay."
-    }
-  },
-  {
-    "model": "bar.region",
-    "pk": 5,
-    "fields": {
-      "name": "Schottland - Lowland",
-      "slug": "schottland-islands",
-      "description": "Die südlichste und kleinste Whiskyregion mit nur vier Destillen: Auchentoshan, Glenkinchie, Bladnoch und Alisa Bay."
-    }
-  },
-  {
-    "model": "bar.region",
-    "pk": 6,
-    "fields": {
-      "name": "Schottland - Campbeltown",
-      "slug": "schottland-campbeltown",
-      "description": "In Campbeltown gab es früher rund 30 Destillen, heute sind noch ganze 3 übrig geblieben."
-    }
-  },
-  {
-    "model": "bar.distillery",
-    "pk": 1,
-    "fields": {
-      "name": "Talisker",
-      "slug": "talisker",
-      "description": "Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
-      "region": 4
-    }
-  },
-  {
-    "model": "bar.distillery",
-    "pk": 2,
-    "fields": {
-      "name": "Laphroaig",
-      "slug": "laphroaig",
-      "description": "Curabitur blandit tempus porttitor.",
-      "region": 5
-    }
-  },
-  {
-    "model": "bar.distillery",
-    "pk": 3,
-    "fields": {
-      "name": "Ardbeg",
-      "slug": "ardbeg",
-      "founded": 1815,
-      "capacity": 1000000,
-      "location": "Nahe Port Ellen",
-      "region": 5
-    }
+{
+  "pk": 1, 
+  "model": "bar.region", 
+  "fields": {
+    "description": "Die fl\u00e4chenm\u00e4\u00dfig gr\u00f6\u00dfte Whiskyregion in Schottland und Heimat von Balblair, Oban und Glenmorangie.", 
+    "name": "Schottland - Highlands", 
+    "slug": "schottland-highland"
   }
-  ,
-  {
-    "model": "bar.Spirit",
-    "pk": 1,
-    "fields": {
-      "name": "Uigeadail",
-      "slug": "uigeadail",
-      "web": "http://www.whisky.de/shop/Schottland/Single-Malt/Islay/Ardbeg-Uigeadail---1.html",
-      "volume": 54,
-      "distillery": 3,
-      "spirittype": 4,
-      "description": "Nicht kaltfiltrierter Blend aus ca. 90% Bourbon- und 10% Sherry-Fässern. Jim Murray \"Whisky of the year 2009\"",
-      "created": "2013-03-20 20:00:00",
-      "modified": "2013-03-20 20:00:00"
-    }
+},
+{
+  "pk": 2, 
+  "model": "bar.region", 
+  "fields": {
+    "description": "Die Region mit den meisten Destillen, u.a. Balvenie, Cragganmore, Glencfarclas und The Macallan.", 
+    "name": "Schottland - Speyside", 
+    "slug": "schottland-speyside"
   }
+},
+{
+  "pk": 3, 
+  "model": "bar.region", 
+  "fields": {
+    "description": "Heimat einiger ber\u00fchmter Destillen wie Lagavulin, Ardbeg, Bowmore oder Laphroig. Bekannt f\u00fcr torfige, starke Whiskies.", 
+    "name": "Schottland - Islay", 
+    "slug": "schottland-islay"
+  }
+},
+{
+  "pk": 4, 
+  "model": "bar.region", 
+  "fields": {
+    "description": "Die Inseln Arran, Jura, Mull, Orkney (Highland Park) und Skye (Talisker), ausgenommen Islay.", 
+    "name": "Schottland - The Islands", 
+    "slug": "schottland-islands"
+  }
+},
+{
+  "pk": 5, 
+  "model": "bar.region", 
+  "fields": {
+    "description": "Die s\u00fcdlichste und kleinste Whiskyregion mit nur vier Destillen: Auchentoshan, Glenkinchie, Bladnoch und Alisa Bay.", 
+    "name": "Schottland - Lowland", 
+    "slug": "schottland-islands"
+  }
+},
+{
+  "pk": 6, 
+  "model": "bar.region", 
+  "fields": {
+    "description": "In Campbeltown gab es fr\u00fcher rund 30 Destillen, heute sind noch ganze 3 \u00fcbrig geblieben.", 
+    "name": "Schottland - Campbeltown", 
+    "slug": "schottland-campbeltown"
+  }
+},
+{
+  "pk": 1, 
+  "model": "bar.spirittype", 
+  "fields": {
+    "description": "Korn", 
+    "name": "Grain", 
+    "slug": "grain"
+  }
+},
+{
+  "pk": 2, 
+  "model": "bar.spirittype", 
+  "fields": {
+    "description": "Malt", 
+    "name": "Malt", 
+    "slug": "malt"
+  }
+},
+{
+  "pk": 3, 
+  "model": "bar.spirittype", 
+  "fields": {
+    "description": "Blend", 
+    "name": "Blended", 
+    "slug": "blend"
+  }
+},
+{
+  "pk": 4, 
+  "model": "bar.spirittype", 
+  "fields": {
+    "description": "Blend", 
+    "name": "Single Malt", 
+    "slug": "single-malt"
+  }
+},
+{
+  "pk": 1, 
+  "model": "bar.distillery", 
+  "fields": {
+    "capacity": null, 
+    "description": "Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.", 
+    "region": 4, 
+    "founded": null, 
+    "location": null, 
+    "slug": "talisker", 
+    "name": "Talisker"
+  }
+},
+{
+  "pk": 2, 
+  "model": "bar.distillery", 
+  "fields": {
+    "capacity": null, 
+    "description": "Curabitur blandit tempus porttitor.", 
+    "region": 5, 
+    "founded": null, 
+    "location": null, 
+    "slug": "laphroaig", 
+    "name": "Laphroaig"
+  }
+},
+{
+  "pk": 3, 
+  "model": "bar.distillery", 
+  "fields": {
+    "capacity": 1000000, 
+    "description": "", 
+    "region": 5, 
+    "founded": 1815, 
+    "location": "Nahe Port Ellen", 
+    "slug": "ardbeg", 
+    "name": "Ardbeg"
+  }
+},
+{
+  "pk": 4, 
+  "model": "bar.distillery", 
+  "fields": {
+    "capacity": null, 
+    "description": "", 
+    "region": 3, 
+    "founded": null, 
+    "location": "", 
+    "slug": "bowmore", 
+    "name": "Bowmore"
+  }
+},
+{
+  "pk": 1, 
+  "model": "bar.spirit", 
+  "fields": {
+    "web": "http://www.whisky.de/shop/Schottland/Single-Malt/Islay/Ardbeg-Uigeadail---1.html", 
+    "description": "Nicht kaltfiltrierter Blend aus ca. 90% Bourbon- und 10% Sherry-F\u00e4ssern. Jim Murray \"Whisky of the year 2009\"", 
+    "created": "2013-03-20T19:00:00Z", 
+    "age": null, 
+    "distillery": 3, 
+    "modified": "2013-03-24T23:01:25Z", 
+    "public": true, 
+    "volume": 54, 
+    "spirittype": 4, 
+    "slug": "uigeadail", 
+    "name": "Uigeadail"
+  }
+},
+{
+  "pk": 2, 
+  "model": "bar.spirit", 
+  "fields": {
+    "web": "http://www.whisky.de/shop/Schottland/Single-Malt/Islay/Bowmore-Enigma-12-Jahre--.html", 
+    "description": "Exklusiv f\u00fcr den Duty-free-Handel abgef\u00fcllte 12-j\u00e4hrige Variante mit h\u00f6herem Anteil an Destillaten aus Sherryf\u00e4ssern.", 
+    "created": "2013-03-25T12:48:13Z", 
+    "age": 12, 
+    "distillery": 4, 
+    "modified": "2013-03-25T12:48:13Z", 
+    "public": true, 
+    "volume": 40, 
+    "spirittype": 4, 
+    "slug": "enigma", 
+    "name": "Enigma"
+  }
+},
+{
+  "pk": 3, 
+  "model": "bar.spirit", 
+  "fields": {
+    "web": "http://www.whisky.de/shop/Schottland/Single-Malt/Islay/Ardbeg-TEN-10-Jahre--.html", 
+    "description": "Sie bevorzugen rauchigen, intensiven Whisky? Dann sollten Sie sich eine Flasche dieses Ardbeg TEN g\u00f6nnen. Er schmeckt voll und intensiv. Dar\u00fcber schwebt eine aromatische Rauchnote.", 
+    "created": "2013-03-25T13:10:53Z", 
+    "age": 10, 
+    "distillery": 3, 
+    "modified": "2013-03-25T13:10:53Z", 
+    "public": true, 
+    "volume": 46, 
+    "spirittype": 4, 
+    "slug": "ten", 
+    "name": "Ten"
+  }
+}
 ]

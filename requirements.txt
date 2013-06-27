@@ -1,9 +1,10 @@
-Django==1.5.0
+Django==1.5.1
 MySQL-python
 django-debug-toolbar
 south
 django-extensions
 PIL
 raven
-sorl-thumbnail
+easy_thumbnails
+django-filer
 iPython
